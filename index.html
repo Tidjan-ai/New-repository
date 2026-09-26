@@ -84,6 +84,36 @@
         </p>
 
     </div>
+<script>
+    var vapiInstance = null;
 
+    const assistant = "a13556b6-01da-48aa-88e4-f41b7966154e";
+    const apiKey = "4b69b904-b71b-40c9-ac44-dea7b303cbe8";
+
+    const buttonConfig = {
+        position: "bottom-right",
+        width: "60px",
+        height: "60px"
+    };
+
+    (function (d, t) {
+        var g = document.createElement(t),
+            s = d.getElementsByTagName(t)[0];
+
+        g.src = "https://cdn.jsdelivr.net/gh/VapiAI/html-script-tag@latest/dist/assets/index.js";
+        g.defer = true;
+        g.async = true;
+
+        s.parentNode.insertBefore(g, s);
+
+        g.onload = function () {
+            vapiInstance = window.vapiSDK.run({
+                apiKey: apiKey,
+                assistant: assistant,
+                config: buttonConfig
+            });
+        };
+    })(document, "script");
+</script>
 </body>
 </html>
